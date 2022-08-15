@@ -96,22 +96,34 @@
  * Modal
  */
 
+ .nws-modal-wrapper .modal ::-webkit-scrollbar {
+  width: 5px;
+ }
+
+ .nws-modal-wrapper .modal ::-webkit-scrollbar-track {
+  box-shadow: transparent;
+  border-radius: 10px;
+ }
+
+ .nws-modal-wrapper .modal ::-webkit-scrollbar-thumb {
+  background: rgb(14, 14, 14);
+  border-radius: 4px;
+ }
+
 .nws-modal-wrapper .modal {
-  background: var(--wallet-selector-content-bg, var(--content-bg));
-  width: 400px;
-  max-width: 700px;
-  height: auto;
-  max-height: 70vh;
+  width: 810px;
+  max-width: 810px;
+  height: 445px;
   border-radius: 16px;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0px);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-  background-color: var(--wallet-selector-content-bg, var(--content-bg));
+  background-color: #232323;
   padding: 32px;
-  overflow-y: auto;
   font-size: 16px;
   line-height: 1.6;
+  overflow-y: hidden;
 }
 
 .nws-modal-wrapper .modal {
@@ -358,46 +370,48 @@
 }
 
 .nws-modal-wrapper .modal .wallet-options-wrapper .options-list {
+  max-width: 230px;
   margin: 0;
   list-style-type: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 10px;
+  padding: 0 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid #313030;
+  overflow-y: scroll;
+  height: 394px;
 }
 
 .nws-modal-wrapper .modal .wallet-options-wrapper .options-list li {
+  width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 1em;
+  justify-content: flex-start;
+  margin: 0 0 12px 0;
   cursor: pointer;
   border-radius: 8px;
-  border: 1px solid var(--wallet-selector-wallet-option-border-color, var(--wallet-option-border-color));
   transition: background-color 0.2s ease-in-out;
 }
 
 .nws-modal-wrapper .modal .wallet-options-wrapper .options-list li .wallet-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  padding: 12px;
 }
 
 .nws-modal-wrapper .modal .wallet-options-wrapper .options-list li .wallet-content .wallet-img-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
 }
 
 .nws-modal-wrapper .modal .wallet-options-wrapper .options-list li .wallet-content .wallet-img-box img {
   text-align: center;
-  width: 100%;
+  width: 36px;
+  margin-right: 16px;
 }
 
 .nws-modal-wrapper .modal .wallet-options-wrapper .options-list li:hover {
-  background-color: var(--wallet-selector-selected-wallet-bg-hover, var(--selected-wallet-bg-hover));
+  background-color: #4F7CD1;
 }
 
 .nws-modal-wrapper .modal .wallet-options-wrapper .options-list li.selected-wallet {

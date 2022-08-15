@@ -87,10 +87,6 @@ export const WalletOptions: React.FC<WalletOptionsProps> = ({
   return (
     <Fragment>
       <div className="wallet-options-wrapper">
-        <p className="description">
-          {options?.description ||
-            "Please select a wallet to sign in to this dApp:"}
-        </p>
         <ul className={"options-list"}>
           {modules.reduce<Array<JSX.Element>>((result, module) => {
             const { selectedWalletId } = selector.store.getState();
